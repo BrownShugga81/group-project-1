@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,46 +9,61 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"/>
     <link rel="stylesheet" href="assets/css/style.css" />
+</head>
 
-  </head>
   <body>
-
+    <!-- Header & Navigation Bar -->
     <header>
-      <h1>Track-a-stat</h1>
+      <h1>
+          <a href="./index.html">Track-A-Stat</a>
+      </h1>
     </header>
 
+    <nav>
+
+    </nav>
+    
+    
     <div class="grid-container">
       <div class="grid-x">
+
+        <!-- NFL Card -->
         <div class="cell small-6">
-          <div class="card" style="width: 300px">
-            <div class="card-divider">player name</div>
+          <div id ="nfl-card" class="card" style="width: 500px">
+            <div class="card-divider">
+                <h4>player name</h4>
+            </div>
             <img
-              src=""
+              src="./assets/images/nfl-logo.png" height="250px" width="250px"
             />
             <div class="card-section">
-              <h4>Player team</h4>
+              <h5>Player team</h5>
               <p>Player stats.</p>
             </div>
           </div>
         </div>
 
+        <!-- MLB Card -->
         <div class="cell small-6">
-          <div class="card" style="width: 300px">
-            <div class="card-divider">player name</div>
+          <div id= "mlb-card" class="card" style="width: 500px">
+            <div class="card-divider">
+                <h4>player name</h4>
+            </div>
             <img
-              src=""
+              src="./assets/images/mlb-logo.png" height="500px" width="500px"
             />
             <div class="card-section">
-              <h4>Player team.</h4>
+              <h5>Player team.</h5>
               <p>player stats.</p>
             </div>
           </div>
         </div>
+
       </div>
     </div>
 
     <footer>
-
+        
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" />
