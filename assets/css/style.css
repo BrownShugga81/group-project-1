@@ -18,6 +18,15 @@ h1, a {
     padding: 5px;
 }
 
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:right;
+    align-items: center;
+    list-style: none;
+    font-size: 25px;
+  }
+
 /* Search and Display Cards for NFL and MLB */
 
 img {
