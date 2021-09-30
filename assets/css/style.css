@@ -1,8 +1,12 @@
+/* General Formating */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Header and Navigation Bar */
 
 header {
     background-color: wheat;
@@ -13,6 +17,8 @@ h1, a {
     margin: 5px;
     padding: 5px;
 }
+
+/* Search and Display Cards for NFL and MLB */
 
 img {
     display: block;
