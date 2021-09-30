@@ -17,23 +17,37 @@
       <h1>
           <a href="./index.html">Track-A-Stat</a>
       </h1>
+
+      <nav>
+        <ul>
+          <li>
+            <a href="./index.html#nfl-card">NFL</a>
+          </li>
+          <li>
+            <a href="index.html#mlb-card">MLB</a>
+          </li>
+        </ul>
+      </nav>
+      
     </header>
 
-    <nav>
-
-    </nav>
+    
     
     
     <div class="grid-container">
       <div class="grid-x">
 
-        <!-- NFL Card -->
+        <h3>Search your favorite NFL or MLB player to retrieve their stats.</h3>
+
+        <!-- NFL Search Card -->
         <div class="cell small-6">
           <div id ="nfl-card" class="card" style="width: 500px">
             <div class="card-divider">
-                <lable>Search:</lable>
-                <input type="text" placeholder="NFL Player">
-                <button type="button" class="button radius bordered shadow primary">Find</button>
+                <form>
+                    <label>Search:</label>
+                    <input id="nfl-input" type="text" placeholder="NFL Player">
+                    <button type="button" class="button rounded bordered shadow primary">Find</button>
+                </form>
             </div>
             
             <div class="card-section">
@@ -42,7 +56,8 @@
           </div>
         </div>
 
-        <div class="cell small-6">
+        <!-- NFL Display Card -->
+         <div class="cell small-6">
             <div id ="nfl-card" class="card" style="width: 500px">
               <div class="card-divider">
                 <h4>Searched Player's Name</h4>
@@ -57,13 +72,15 @@
             </div>
           </div>
 
-        <!-- MLB Card -->
+        <!-- MLB Search Card -->
         <div class="cell small-6">
           <div id= "mlb-card" class="card" style="width: 500px">
             <div class="card-divider">
-                <lable>Search:</lable>
-                <input type="text" placeholder="MLB Player">
-                <button type="button" class="button radius bordered shadow primary">Find</button>
+                <form>
+                    <label>Search:</label>
+                    <input id="mlb-input" type="text" placeholder="MLB Player">
+                    <button type="button" class="button rounded bordered shadow primary">Find</button>
+                </form>
             </div>
             
             <div class="card-section">
@@ -72,6 +89,7 @@
           </div>
         </div>
 
+        <!-- MLB Display Card -->
         <div class="cell small-6">
             <div id= "mlb-card" class="card" style="width: 500px">
               <div class="card-divider">
