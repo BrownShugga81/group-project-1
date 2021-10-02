@@ -30,9 +30,16 @@ header nav ul {
 
 /* Search and Display Cards for NFL and MLB */
 
+label {
+    font-size: 20px;
+}
 img {
     display: block;
     margin: 0 auto;
     align-items: center;
+}
+
+h6 {
+    font-weight: bold;
 }
 

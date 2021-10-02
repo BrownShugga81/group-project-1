@@ -45,14 +45,15 @@
           <div id ="nfl-card" class="card" style="width: 500px">
             <div class="card-divider">
                 <form>
-                    <label>Search:</label>
+                    <label>NFL Search:</label>
                     <input id="nfl-input" type="text" placeholder="NFL Player">
-                    <button id="nfl-btn" type="button" class="button rounded bordered shadow primary">Find</button>
+                    <button id="nfl-btn" type="button" class="button expanded">HUT!</button>
                 </form>
             </div>
             
             <div class="card-section">
-              <p>Display Searched Name.</p>
+              <h6 class="text-bold">Previous Searched Names: </h6>
+              <p id="displayNflSearch"></p>
             </div>
           </div>
         </div>
@@ -61,7 +62,7 @@
          <div class="cell small-6">
             <div id ="nfl-card" class="card" style="width: 500px">
               <div class="card-divider">
-                <h4>Searched Player's Name</h4>
+                <h4 id="nflDisplayCardName">Searched Player's Name</h4>
               </div>
               <img
                 src="./assets/images/nfl-logo.png" height="250px" width="250px"
@@ -81,14 +82,15 @@
           <div id= "mlb-card" class="card" style="width: 500px">
             <div class="card-divider">
                 <form>
-                    <label>Search:</label>
+                    <label>MLB Search:</label>
                     <input id="mlb-input" type="text" placeholder="MLB Player">
-                    <button id="mlb-btn" type="button" class="button rounded bordered shadow primary">Find</button>
+                    <button id="mlb-btn" type="button" class="button expanded">PLAY BALL!</button>
                 </form>
             </div>
             
             <div class="card-section">
-              <p>Display Searched Names</p>
+              <h6 class="text-bold">Previous Searched Names: </h6>
+              <p id="displayMlbSearch"></p>
             </div>
           </div>
         </div>
@@ -97,7 +99,7 @@
         <div class="cell small-6">
             <div id= "mlb-card" class="card" style="width: 500px">
               <div class="card-divider">
-                  <h4>Searched Player's Name</h4>
+                  <h4 id="mlbDisplayCardName">Searched Player's Name</h4>
               </div>
               <img
                 src="./assets/images/mlb-logo.png" height="500px" width="500px"
@@ -113,31 +115,31 @@
     </div>
     </div>
 <!--Footer created by daniel-->
-    <footer>
-        <div class="grid-x grid-container">
-          <div class="cell large-3 medium-6 small 12">
-            <H3>About Us</H3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quos quae inventore quaerat laudantium ab iste vero exercitationem animi voluptates quisquam necessitatibus sed, alias magni repellat asperiores consequuntur voluptas quidem?</p>
-          
-          </div>
-        </div>
-        <div class="bottom">
-          <div class="grid-x grid-container">
-            <div class="cell medium-9 small-12">
-              <p>By Christian, Noah, and Daniel</p>
-            </div>
-            <div class="cell large-3 medium-6 small-12">
-              <ul>
-                <li>Link</li>
-                <li>Link</li>
-                <li>Link</li>
-              </ul>
-            </div>
-          </div>
-    </footer>
-    <script src="./assets/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" />
+<footer>
+  <div class="grid-x grid-container">
+    <div class="cell large-3 medium-6 small 12">
+      <H3>About Us</H3>
+      <p>Sports fans building web apps for sports fans.</p>
     
-  </body>
+    </div>
+  </div>
+  <div class="bottom">
+    <div class="grid-x grid-container">
+      <div class="cell medium-9 small-12">
+        <p>By Christian, Noah, and Daniel</p>
+      </div>
+      <div class="cell large-3 medium-6 small-12">
+        <ul>
+          <li>Link</li>
+          <li>Link</li>
+          <li>Link</li>
+        </ul>
+      </div>
+    </div>
+</footer>
+<script src="./assets/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" />
+
+</body>
 
 </html>
