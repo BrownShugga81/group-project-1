@@ -26,7 +26,7 @@ var nflSearch = function (){
    // append searched NFL name into NFL Display Card
    var nflDisplayNameEl = nflDisplayCardName;
    nflDisplayNameEl.textContent = nflInputText;
-   nflDisplayNameEl.appendChild(nflInputText);
+  // nflDisplayNameEl.appendChild(nflInputText);
     
 }
 
@@ -43,9 +43,20 @@ var mlbSearch = function (){
     // append searched MLB name into MLB Display Card
     var mlbDisplayNameEl = mlbDisplayCardName;
     mlbDisplayNameEl.textContent = mlbInputText;
-    mlbDisplayNameEl.appendChild(mlbInputText);
+   // mlbDisplayNameEl.appendChild(mlbInputText);
+
+   var mlbPlayer = mlbInput.value;
+    var mlbEndpoint = "http://lookup-service-prod.mlb.com/json/named.search_player_all.bam?sport_code='mlb'&active_sw='Y'&name_part='" + mlbPlayer + "'";
+
+    fetch(mlbEndpoint).then(function(response) {
+        console.log(response);
+        return response.json();
+    }).then(function(data){
+        console.log(data);
+    })
 
 }
+
 
 // Event Listeners for when a user searches for a player
 nflBtn.addEventListener("click", nflSearch);
