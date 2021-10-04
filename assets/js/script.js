@@ -49,10 +49,10 @@ var mlbSearch = function (){
     var mlbEndpoint = "http://lookup-service-prod.mlb.com/json/named.search_player_all.bam?sport_code='mlb'&active_sw='Y'&name_part='" + mlbPlayer + "'";
 
     fetch(mlbEndpoint).then(function(response) {
-        console.log(response);
+        //console.log(response);
         return response.json();
     }).then(function(data){
-        console.log(data);
+        console.log(data.search_player_all.queryResults.row.player_id);
     })
 
 }
