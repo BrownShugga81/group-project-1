@@ -45,15 +45,46 @@ var mlbSearch = function (){
     mlbDisplayNameEl.textContent = mlbInputText;
    // mlbDisplayNameEl.appendChild(mlbInputText);
 
-   var mlbPlayer = mlbInput.value;
+   // function to pull player ID
+    var mlbPlayer = mlbInput.value;
     var mlbEndpoint = "http://lookup-service-prod.mlb.com/json/named.search_player_all.bam?sport_code='mlb'&active_sw='Y'&name_part='" + mlbPlayer + "'";
 
     fetch(mlbEndpoint).then(function(response) {
-        //console.log(response);
         return response.json();
-    }).then(function(data){
-        console.log(data.search_player_all.queryResults.row.player_id);
-    })
+    }).then(function(mlbdata){
+        console.log(mlbdata);
+
+   // function to pull stats with player ID     
+    let mlbPlayerId = mlbdata.search_player_all.queryResults.row.player_id;
+    var mlbEndpointStats = "http://lookup-service-prod.mlb.com/json/named.sport_career_hitting.bam?league_list_id='mlb'&game_type='R'&player_id='" + mlbPlayerId + "'";
+
+    fetch(mlbEndpointStats).then(function(response) {
+        return response.json();
+    }).then(function(mlbStats){
+        console.log(mlbStats.sport_career_hitting.queryResults.row);
+
+        // jQuery to display HR stat
+        let mlbHr = mlbStats.sport_career_hitting.queryResults.row.hr;
+        $('#hr-stat')
+        .append('HR: ' + `${mlbHr}`);
+
+        //jQuery to display RBI stat
+        let mlbRbi = mlbStats.sport_career_hitting.queryResults.row.rbi;
+        $('#rbi-stat')
+        .append('RBI: ' + `${mlbRbi}`);
+
+        //jQuery to display AVG stat
+        let mlbAvg = mlbStats.sport_career_hitting.queryResults.row.avg;
+        $('#avg-stat')
+        .append('AVG: ' + `${mlbAvg}`);
+    });
+
+    // jQuery to display mlb team
+    let mlbTeam = mlbdata.search_player_all.queryResults.row.team_full;
+    $('#mlb-team')
+    .append(`${mlbTeam}`);
+
+    });
 
 }
 
