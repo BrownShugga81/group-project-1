@@ -27,6 +27,15 @@ var nflSearch = function (){
    var nflDisplayNameEl = nflDisplayCardName;
    nflDisplayNameEl.textContent = nflInputText;
   // nflDisplayNameEl.appendChild(nflInputText);
+
+    // NFL Fetch API 
+  var nflEndpoint = "https://api.sportsdata.io/v3/nfl/stats/json/PlayerSeasonStatsByPlayerID/2020REG/732?key=b115e3ba23bd4702bc91e408f7e6f476"
+
+    fetch(nflEndpoint).then(function(response) {
+        return response.json();
+    }).then(function(data){
+        console.log(data);
+    })
     
 }
 
@@ -76,7 +85,7 @@ var mlbSearch = function (){
         //jQuery to display AVG stat
         let mlbAvg = mlbStats.sport_career_hitting.queryResults.row.avg;
         $('#avg-stat')
-        .append('AVG: ' + `${mlbAvg}`);
+        .append('AVG: ' + `${mlbAvg}` + " %");
     });
 
     // jQuery to display mlb team
