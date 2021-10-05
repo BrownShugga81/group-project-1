@@ -41,6 +41,10 @@ var nflSearch = function (){
 
 // MLB Player Search Function
 var mlbSearch = function (){
+
+    // clear current mlb stats
+    clearMlbStats();
+
     // Variable for MLB Search Input
     var mlbInputText = mlbInput.value;
 
@@ -94,6 +98,15 @@ var mlbSearch = function (){
     .append(`${mlbTeam}`);
 
     });
+
+}
+
+// clear current mlb stats function
+var clearMlbStats = function() {
+    document.getElementById("mlb-team").innerHTML = "";
+    document.getElementById("hr-stat").innerHTML = "";
+    document.getElementById("rbi-stat").innerHTML = "";
+    document.getElementById("avg-stat").innerHTML = "";
 
 }
 
