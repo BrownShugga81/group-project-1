@@ -4,7 +4,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    justify-content: space-around
+    justify-content: space-around;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
     
 }
 
@@ -56,3 +58,11 @@ h6 {
     font-weight: bold;
 }
 
+.card {
+    border-radius: 15px;
+    text-align: center;
+}
+
+h4 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
