@@ -41,7 +41,7 @@ var nbaSearch = function (){
         console.log(nbadata);
 
         let nbaPlayerId = nbadata.data[0].id;
-        var nbaStatsEndpoint = 'http://www.balldontlie.io/api/v1/season_averages?season=2018&player_ids[]=' + nbaPlayerId + "&postseason=true";
+        var nbaStatsEndpoint = 'https://www.balldontlie.io/api/v1/season_averages?season=2018&player_ids[]=' + nbaPlayerId + "&postseason=true";
         
 
 
@@ -98,7 +98,7 @@ var mlbSearch = function (){
 
    // function to pull player ID
     var mlbPlayer = mlbInput.value;
-    var mlbEndpoint = "http://lookup-service-prod.mlb.com/json/named.search_player_all.bam?sport_code='mlb'&active_sw='Y'&name_part='" + mlbPlayer + "'";
+    var mlbEndpoint = "https://lookup-service-prod.mlb.com/json/named.search_player_all.bam?sport_code='mlb'&active_sw='Y'&name_part='" + mlbPlayer + "'";
 
     fetch(mlbEndpoint).then(function(response) {
         return response.json();
@@ -107,7 +107,7 @@ var mlbSearch = function (){
 
    // function to pull stats with player ID     
     let mlbPlayerId = mlbdata.search_player_all.queryResults.row.player_id;
-    var mlbEndpointStats = "http://lookup-service-prod.mlb.com/json/named.sport_career_hitting.bam?league_list_id='mlb'&game_type='R'&player_id='" + mlbPlayerId + "'";
+    var mlbEndpointStats = "https://lookup-service-prod.mlb.com/json/named.sport_career_hitting.bam?league_list_id='mlb'&game_type='R'&player_id='" + mlbPlayerId + "'";
 
     fetch(mlbEndpointStats).then(function(response) {
         return response.json();
