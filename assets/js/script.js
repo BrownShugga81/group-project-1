@@ -16,6 +16,9 @@ var mlbDisplayCardName = document.getElementById("mlbDisplayCardName");
 
 // NBA Player Search Function 
 var nbaSearch = function (){
+    //clear previous searches
+    clearNbaStats();
+
     // Variable for NBA Search Input
     var firstNameNba = firstNameNbaInput.value;
     var lastNameNba = lastNameNbaInput.value;
@@ -29,13 +32,48 @@ var nbaSearch = function (){
    var nbaDisplayNameEl = nbaDisplayCardName;
    nbaDisplayNameEl.textContent = firstNameNba + " " + lastNameNba;
 
-    // NBA Fetch API 
-  var nbaEndpoint = "https://www.balldontlie.io/api/v1/players"
+    // NBA Fetch API to pull player ID
+  var nbaEndpoint = "https://www.balldontlie.io/api/v1/players?search=" + firstNameNba + "_" +lastNameNba;
 
     fetch(nbaEndpoint).then(function(response) {
         return response.json();
-    }).then(function(data){
-        console.log(data);
+    }).then(function(nbadata){
+        console.log(nbadata);
+
+        let nbaPlayerId = nbadata.data[0].id;
+        var nbaStatsEndpoint = 'http://www.balldontlie.io/api/v1/season_averages?season=2018&player_ids[]=' + nbaPlayerId + "&postseason=true";
+        
+
+
+        fetch(nbaStatsEndpoint).then(function(response){
+            return response.json();
+        }).then(function(nbaStats){
+            //console.log(nbaStats);
+
+        //jQuery to display points
+        let nbaPts = nbaStats.data[0].pts;
+        $('#pts-stat')
+        .append('Points: ' + `${nbaPts}`);
+        
+        
+        //jQuery to display Rebounds
+        let nbaReb = nbaStats.data[0].reb;
+        $('#reb-stat')
+        .append('Rebounds: ' + `${nbaReb}`);
+
+        //jQuery to display Assists
+        let nbaAst = nbaStats.data[0].ast;
+        $('#ast-stat')
+        .append('Assists: ' + `${nbaAst}`);
+
+        })
+
+    // jQuery to display team name 
+    let nbaPlayerTeam = nbadata.data[0].team.full_name; 
+    $('#nba-team')
+    .append(`${nbaPlayerTeam}`);  
+        
+        
     })
     
 }
@@ -108,6 +146,14 @@ var clearMlbStats = function() {
     document.getElementById("rbi-stat").innerHTML = "";
     document.getElementById("avg-stat").innerHTML = "";
 
+}
+
+// clear current nba stats
+var clearNbaStats = function() {
+    document.getElementById("nba-team").innerHTML = "";
+    document.getElementById("pts-stat").innerHTML = "";
+    document.getElementById("reb-stat").innerHTML = "";
+    document.getElementById("ast-stat").innerHTML = "";
 }
 
 
