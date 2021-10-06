@@ -1,7 +1,8 @@
 // Global Variables
 var firstNameNbaInput = document.getElementById("fn-nba-input");
 var lastNameNbaInput = document.getElementById("ln-nba-input");
-var mlbInput = document.getElementById("mlb-input");
+var firstNameMlbInput = document.getElementById("fn-mlb-input");
+var lastNameMlbInput = document.getElementById("ln-mlb-input");
 
 var nbaBtn = document.getElementById("nba-btn");
 var mlbBtn = document.getElementById("mlb-btn");
@@ -85,20 +86,20 @@ var mlbSearch = function (){
     clearMlbStats();
 
     // Variable for MLB Search Input
-    var mlbInputText = mlbInput.value;
+    var firstNameMlb = firstNameMlbInput.value;
+    var lastNameMlb = lastNameMlbInput.value;
 
     // Create <li> to append Searched MLB Name and append to the Search Card
     var displaySearched = document.createElement("li");
-    displaySearched.textContent = mlbInputText;
+    displaySearched.textContent = firstNameMlb + " " + lastNameMlb;
     mlbDisplay.appendChild(displaySearched);
 
     // append searched MLB name into MLB Display Card
     var mlbDisplayNameEl = mlbDisplayCardName;
-    mlbDisplayNameEl.textContent = mlbInputText;
+    mlbDisplayNameEl.textContent = firstNameMlb + " " + lastNameMlb;
 
    // function to pull player ID
-    var mlbPlayer = mlbInput.value;
-    var mlbEndpoint = "https://lookup-service-prod.mlb.com/json/named.search_player_all.bam?sport_code='mlb'&active_sw='Y'&name_part='" + mlbPlayer + "'";
+    var mlbEndpoint = "https://lookup-service-prod.mlb.com/json/named.search_player_all.bam?sport_code='mlb'&active_sw='Y'&name_part='" + firstNameMlb + " " + lastNameMlb + "'";
 
     fetch(mlbEndpoint).then(function(response) {
         return response.json();
