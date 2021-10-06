@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"/>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
 </head>
 
   <body>
@@ -21,7 +22,7 @@
       <nav>
         <ul>
           <li>
-            <a href="#nfl-card"><strong>NFL</strong></a>
+            <a href="#nba-card"><strong>NBA</strong></a>
           </li>
           <li>
             <a href="#mlb-card"><strong>MLB</strong></a>
@@ -37,38 +38,42 @@
     <div class="grid-container">
       <div class="grid-x">
 
-        <h3>Search your favorite NFL or MLB player to retrieve their stats.</h3>
+        <h3>Search your favorite NBA or MLB player to retrieve their stats.</h3>
 
-        <!-- NFL Search Card -->
+        <!-- NBA Search Card -->
         <div class="row medium-unstack">
         <div class="cell small-6">
-          <div id ="nfl-card" class="card" style="width: 500px">
+          <div id ="nba-card" class="card" style="width: 500px">
             <div class="card-divider">
                 <form>
-                    <label>Search:</label>
-                    <input id="nfl-input" type="text" placeholder="NFL Player">
-                    <button type="button" class="button rounded bordered shadow primary">Find</button>
+                    <label>NBA Search:</label>
+                    <input id="fn-nba-input" type="text" placeholder="First Name">
+                    <input id="ln-nba-input" type="text" placeholder="Last Name">
+                    <button id="nba-btn" type="button" class="button expanded">THREE!</button>
                 </form>
             </div>
             
             <div class="card-section">
-              <p>Display Searched Name.</p>
+              <h6 class="text-bold">Previous Searched Names: </h6>
+              <p id="displayNbaSearch"></p>
             </div>
           </div>
         </div>
 
-        <!-- NFL Display Card -->
+        <!-- NBA Display Card -->
          <div class="cell small-6">
-            <div id ="nfl-card" class="card" style="width: 500px">
+            <div id ="nba-card" class="card" style="width: 500px">
               <div class="card-divider">
-                <h4>Searched Player's Name</h4>
+                <h4 id="nbaDisplayCardName">Player's Name</h4>
               </div>
               <img
-                src="./assets/images/nfl-logo.png" height="250px" width="250px"
+                src="./assets/images/nba-logo.jpeg" height="300px" width="300px"
               />
               <div class="card-section">
-                <h5>NFL Team</h5>
-                <p>Player stats.</p>
+                <h5 id="mlb-team"></h5>
+                <p id="hr-stat"></p>
+                <p id="rbi-stat"></p>
+                <p id="avg-stat"></p>
               </div>
             </div>
           </div>
@@ -81,14 +86,15 @@
           <div id= "mlb-card" class="card" style="width: 500px">
             <div class="card-divider">
                 <form>
-                    <label>Search:</label>
+                    <label>MLB Batter Search:</label>
                     <input id="mlb-input" type="text" placeholder="MLB Player">
-                    <button type="button" class="button rounded bordered shadow primary">Find</button>
+                    <button id="mlb-btn" type="button" class="button expanded">PLAY BALL!</button>
                 </form>
             </div>
             
             <div class="card-section">
-              <p>Display Searched Names</p>
+              <h6 class="text-bold">Previous Searched Names: </h6>
+              <p id="displayMlbSearch"></p>
             </div>
           </div>
         </div>
@@ -97,14 +103,16 @@
         <div class="cell small-6">
             <div id= "mlb-card" class="card" style="width: 500px">
               <div class="card-divider">
-                  <h4>Searched Player's Name</h4>
+                  <h4 id="mlbDisplayCardName">Player's Name</h4>
               </div>
               <img
                 src="./assets/images/mlb-logo.png" height="500px" width="500px"
               />
               <div class="card-section">
-                <h5>MLB Team</h5>
-                <p>Player stats.</p>
+                <h5 id="mlb-team"></h5>
+                <p id="hr-stat"></p>
+                <p id="rbi-stat"></p>
+                <p id="avg-stat"></p>
               </div>
             </div>
           </div>
@@ -134,9 +142,31 @@
             </div>
           </div>
     </footer>
+<footer>
+  <div class="grid-x grid-container">
+    <div class="cell large-3 medium-6 small 12">
+      <H3>About Us</H3>
+      <p>Sports fans building web apps for sports fans.</p>
+    
+    </div>
+  </div>
+  <div class="bottom">
+    <div class="grid-x grid-container">
+      <div class="cell medium-9 small-12">
+        <p>By Christian, Noah, and Daniel</p>
+      </div>
+      <div class="cell large-3 medium-6 small-12">
+        <ul>
+          <li>Link</li>
+          <li>Link</li>
+          <li>Link</li>
+        </ul>
+      </div>
+    </div>
+</footer>
+<script src="./assets/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" />
 
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" />
-    <script src="./assets/js/script.js" />
-  </body>
+</body>
 
 </html>
