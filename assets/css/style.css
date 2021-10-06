@@ -4,19 +4,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    justify-content: space-around;
+    justify-content: space-around
+    
 }
 
 /* Header and Navigation Bar */
 
 header {
     background-color: wheat;
+    text-shadow: 2px 2px #0000
 }
 
 h1, a {
-    color: brown;
+    color: red;
     margin: 5px;
-    padding: 5px;
+    padding: 5px;s
 }
 
 header nav ul {
@@ -26,6 +28,7 @@ header nav ul {
     align-items: center;
     list-style: none;
     font-size: 25px;
+
   }
 
 /* Search and Display Cards for NFL and MLB */
@@ -41,8 +44,9 @@ img {
 
 #footer-box {
     align-items: baseline  ;
-    color: brown;
+    color: red;
     background-color: wheat;
+    text-shadow: 2px 2px #0000
 }
 
 #list {
