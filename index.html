@@ -22,7 +22,7 @@
       <nav>
         <ul>
           <li>
-            <a href="#nfl-card"><strong>NFL</strong></a>
+            <a href="#nba-card"><strong>NBA</strong></a>
           </li>
           <li>
             <a href="#mlb-card"><strong>MLB</strong></a>
@@ -38,39 +38,42 @@
     <div class="grid-container">
       <div class="grid-x">
 
-        <h3>Search your favorite NFL or MLB player to retrieve their stats.</h3>
+        <h3>Search your favorite NBA or MLB player to retrieve their stats.</h3>
 
-        <!-- NFL Search Card -->
+        <!-- NBA Search Card -->
         <div class="row medium-unstack">
         <div class="cell small-6">
-          <div id ="nfl-card" class="card" style="width: 500px">
+          <div id ="nba-card" class="card" style="width: 500px">
             <div class="card-divider">
                 <form>
-                    <label>NFL Search:</label>
-                    <input id="nfl-input" type="text" placeholder="NFL Player">
-                    <button id="nfl-btn" type="button" class="button expanded">HUT!</button>
+                    <label>NBA Search:</label>
+                    <input id="fn-nba-input" type="text" placeholder="First Name">
+                    <input id="ln-nba-input" type="text" placeholder="Last Name">
+                    <button id="nba-btn" type="button" class="button expanded">THREE!</button>
                 </form>
             </div>
             
             <div class="card-section">
               <h6 class="text-bold">Previous Searched Names: </h6>
-              <p id="displayNflSearch"></p>
+              <p id="displayNbaSearch"></p>
             </div>
           </div>
         </div>
 
-        <!-- NFL Display Card -->
+        <!-- NBA Display Card -->
          <div class="cell small-6">
-            <div id ="nfl-card" class="card" style="width: 500px">
+            <div id ="nba-card" class="card" style="width: 500px">
               <div class="card-divider">
-                <h4 id="nflDisplayCardName">Player's Name</h4>
+                <h4 id="nbaDisplayCardName">Player's Name</h4>
               </div>
               <img
-                src="./assets/images/nfl-logo.png" height="250px" width="250px"
+                src="./assets/images/nba-logo.jpeg" height="300px" width="300px"
               />
               <div class="card-section">
-                <h5>NFL Team</h5>
-                <p id="nfl-stat">Player stats.</p>
+                <h5 id="mlb-team"></h5>
+                <p id="hr-stat"></p>
+                <p id="rbi-stat"></p>
+                <p id="avg-stat"></p>
               </div>
             </div>
           </div>

@@ -1,37 +1,38 @@
 // Global Variables
-var nflInput = document.getElementById("nfl-input");
+var firstNameNbaInput = document.getElementById("fn-nba-input");
+var lastNameNbaInput = document.getElementById("ln-nba-input");
 var mlbInput = document.getElementById("mlb-input");
 
-var nflBtn = document.getElementById("nfl-btn");
+var nbaBtn = document.getElementById("nba-btn");
 var mlbBtn = document.getElementById("mlb-btn");
 
-var nflDisplay = document.getElementById("displayNflSearch");
+var nbaDisplay = document.getElementById("displayNbaSearch");
 var mlbDisplay = document.getElementById("displayMlbSearch");
 
-var nflDisplayCardName = document.getElementById("nflDisplayCardName");
+var nbaDisplayCardName = document.getElementById("nbaDisplayCardName");
 var mlbDisplayCardName = document.getElementById("mlbDisplayCardName");
 
 
 
-// NFL Player Search Function 
-var nflSearch = function (){
-    // Variable for NFL Search Input
-    var nflInputText = nflInput.value;
+// NBA Player Search Function 
+var nbaSearch = function (){
+    // Variable for NBA Search Input
+    var firstNameNba = firstNameNbaInput.value;
+    var lastNameNba = lastNameNbaInput.value;
 
-    // Create <li> to append Searched NFL Name and append to the Search Card
+    // Create <li> to append Searched NBA Name and append to the Search Card
    var displaySearched = document.createElement("li");
-   displaySearched.textContent = nflInputText;
-   nflDisplay.appendChild(displaySearched);
+   displaySearched.textContent = firstNameNba + " " + lastNameNba;
+   nbaDisplay.appendChild(displaySearched);
 
-   // append searched NFL name into NFL Display Card
-   var nflDisplayNameEl = nflDisplayCardName;
-   nflDisplayNameEl.textContent = nflInputText;
-  // nflDisplayNameEl.appendChild(nflInputText);
+   // append searched NBA name into NBA Display Card
+   var nbaDisplayNameEl = nbaDisplayCardName;
+   nbaDisplayNameEl.textContent = firstNameNba + " " + lastNameNba;
 
-    // NFL Fetch API 
-  var nflEndpoint = "https://api.sportsdata.io/v3/nfl/stats/json/PlayerSeasonStatsByPlayerID/2020REG/732?key=b115e3ba23bd4702bc91e408f7e6f476"
+    // NBA Fetch API 
+  var nbaEndpoint = "https://www.balldontlie.io/api/v1/players"
 
-    fetch(nflEndpoint).then(function(response) {
+    fetch(nbaEndpoint).then(function(response) {
         return response.json();
     }).then(function(data){
         console.log(data);
@@ -56,7 +57,6 @@ var mlbSearch = function (){
     // append searched MLB name into MLB Display Card
     var mlbDisplayNameEl = mlbDisplayCardName;
     mlbDisplayNameEl.textContent = mlbInputText;
-   // mlbDisplayNameEl.appendChild(mlbInputText);
 
    // function to pull player ID
     var mlbPlayer = mlbInput.value;
@@ -112,5 +112,5 @@ var clearMlbStats = function() {
 
 
 // Event Listeners for when a user searches for a player
-nflBtn.addEventListener("click", nflSearch);
+nbaBtn.addEventListener("click", nbaSearch);
 mlbBtn.addEventListener("click", mlbSearch);
