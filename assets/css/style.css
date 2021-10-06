@@ -36,3 +36,12 @@ img {
     align-items: center;
 }
 
+#footer-box {
+    align-items: baseline  ;
+    color: brown;
+    background-color: wheat;
+}
+
+#list {
+    list-style: none;
+}
