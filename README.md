@@ -15,7 +15,7 @@ WHEN I enter a NBA or MLB Player<br>
 THEN I am displayed with a saved searched list underneath the search input.<br>
 
 ## Screenshot of deployed app
-![Alt text](/assets/images/img.png?raw=true "Track-a-Stat")
+![Track-a-Stat](/assets/images/track-a-stat.png?raw=true "Track-a-Stat")
 
 ## Deployed URL:
 https://brownshugga81.github.io/group-project-1/
