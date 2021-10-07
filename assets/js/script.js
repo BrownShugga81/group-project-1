@@ -36,48 +36,60 @@ var nbaSearch = function (){
     // NBA Fetch API to pull player ID
   var nbaEndpoint = "https://www.balldontlie.io/api/v1/players?search=" + firstNameNba + "_" +lastNameNba;
 
-    fetch(nbaEndpoint).then(function(response) {
-        return response.json();
-    }).then(function(nbadata){
-        console.log(nbadata);
+  fetch(nbaEndpoint).then(function(response) {
+      if (response.ok) {
+    return response.json();
+      } else {
+          nbaDisplay.innerHTML = "Error occured. Check spelling."
+      }
+}).then(function(nbadata){
+    console.log(nbadata);
 
-        let nbaPlayerId = nbadata.data[0].id;
-        var nbaStatsEndpoint = 'https://www.balldontlie.io/api/v1/season_averages?season=2018&player_ids[]=' + nbaPlayerId + "&postseason=true";
-        
-
-
-        fetch(nbaStatsEndpoint).then(function(response){
-            return response.json();
-        }).then(function(nbaStats){
-            //console.log(nbaStats);
-
-        //jQuery to display points
-        let nbaPts = nbaStats.data[0].pts;
-        $('#pts-stat')
-        .append('Points: ' + `${nbaPts}`);
-        
-        
-        //jQuery to display Rebounds
-        let nbaReb = nbaStats.data[0].reb;
-        $('#reb-stat')
-        .append('Rebounds: ' + `${nbaReb}`);
-
-        //jQuery to display Assists
-        let nbaAst = nbaStats.data[0].ast;
-        $('#ast-stat')
-        .append('Assists: ' + `${nbaAst}`);
-
-        })
-
-    // jQuery to display team name 
-    let nbaPlayerTeam = nbadata.data[0].team.full_name; 
-    $('#nba-team')
-    .append(`${nbaPlayerTeam}`);  
-        
-        
-    })
+    let nbaPlayerId = nbadata.data[0].id;
+    var nbaStatsEndpoint = 'https://www.balldontlie.io/api/v1/season_averages?season=2018&player_ids[]=' + nbaPlayerId + "&postseason=true";
     
+
+
+    fetch(nbaStatsEndpoint).then(function(response){
+        return response.json();
+    }).then(function(nbaStats){
+        //console.log(nbaStats);
+
+    //jQuery to display points
+    let nbaPts = nbaStats.data[0].pts;
+    $('#pts-stat')
+    .append('Average Points: ' + `${nbaPts}`);
+    
+    
+    //jQuery to display Rebounds
+    let nbaReb = nbaStats.data[0].reb;
+    $('#reb-stat')
+    .append('Average Rebounds: ' + `${nbaReb}`);
+
+    //jQuery to display Assists
+    let nbaAst = nbaStats.data[0].ast;
+    $('#ast-stat')
+    .append('Average Assists: ' + `${nbaAst}`);
+
+    })
+
+// jQuery to display team name 
+let nbaPlayerTeam = nbadata.data[0].team.full_name; 
+$('#nba-team')
+.append(`${nbaPlayerTeam}`);  
+    
+    
+})
+
+.catch((error) => {
+    nbaDisplay.textContent = "Error Occured. Check Spelling.";
+});
+
 }
+
+
+    
+
 
 // MLB Player Search Function
 var mlbSearch = function (){
@@ -102,9 +114,12 @@ var mlbSearch = function (){
     var mlbEndpoint = "https://lookup-service-prod.mlb.com/json/named.search_player_all.bam?sport_code='mlb'&active_sw='Y'&name_part='" + firstNameMlb + " " + lastNameMlb + "'";
 
     fetch(mlbEndpoint).then(function(response) {
+        if (response.ok) {
         return response.json();
+        } else {
+            mlbDisplay.innerHTML = "Error occured. Check Spelling.";
+        }
     }).then(function(mlbdata){
-        console.log(mlbdata);
 
    // function to pull stats with player ID     
     let mlbPlayerId = mlbdata.search_player_all.queryResults.row.player_id;
@@ -113,7 +128,6 @@ var mlbSearch = function (){
     fetch(mlbEndpointStats).then(function(response) {
         return response.json();
     }).then(function(mlbStats){
-        console.log(mlbStats.sport_career_hitting.queryResults.row);
 
         // jQuery to display HR stat
         let mlbHr = mlbStats.sport_career_hitting.queryResults.row.hr;
@@ -136,7 +150,11 @@ var mlbSearch = function (){
     $('#mlb-team')
     .append(`${mlbTeam}`);
 
-    });
+    })
+
+    .catch((error) => {
+        mlbDisplay.innerHTML = "Error occured. Check Spelling."
+    })
 
 }
 
