@@ -13,6 +13,9 @@ var mlbDisplay = document.getElementById("displayMlbSearch");
 var nbaDisplayCardName = document.getElementById("nbaDisplayCardName");
 var mlbDisplayCardName = document.getElementById("mlbDisplayCardName");
 
+var mlbTeamEl = document.getElementById("mlb-team");
+var nbaTeamEl = document.getElementById("nba-team");
+
 
 
 // NBA Player Search Function 
@@ -82,7 +85,9 @@ $('#nba-team')
 })
 
 .catch((error) => {
-    nbaDisplay.textContent = "Error Occured. Check Spelling.";
+    nbaTeamEl.textContent = "Error Occured. Check Spelling or make sure player is still active.";
+    displaySearched.textContent = " ";
+    nbaDisplayNameEl.textContent = " ";
 });
 
 }
@@ -153,7 +158,9 @@ var mlbSearch = function (){
     })
 
     .catch((error) => {
-        mlbDisplay.innerHTML = "Error occured. Check Spelling."
+        mlbTeamEl.innerHTML = "Error occured. Check Spelling or make sure player is still active."
+        displaySearched.textContent = "";
+        mlbDisplayNameEl.textContent = "";
     })
 
 }
@@ -174,6 +181,8 @@ var clearNbaStats = function() {
     document.getElementById("reb-stat").innerHTML = "";
     document.getElementById("ast-stat").innerHTML = "";
 }
+
+
 
 
 // Event Listeners for when a user searches for a player
